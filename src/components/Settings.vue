@@ -1,7 +1,7 @@
 <template>
   <div>
     <div ref="modal" class="modal" tabindex="-1">
-      <div class="modal-dialog modal-xl">
+      <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Settings</h5>
@@ -24,7 +24,7 @@
               <label for="coins" class="form-label">Coins</label>
               <textarea class="form-control"
                 id="coins"
-                rows="3"
+                rows="10"
                 v-model="config.coins">
               </textarea>
             </div>
@@ -60,23 +60,14 @@
 
 <script>
 import { Modal } from 'bootstrap';
+import DefaultConfig from '../consts/DefaultConfig';
 export default {
   data() {
     return {
       modal: null,
       config: {
-        currency: 'php',
-        columns: 3,
-        coins: [
-          'binancecoin',
-          'cryptoblades',
-          'bitcoin',
-          'smooth-love-potion',
-          'axie-infinity',
-          'ethereum',
-          'ripple',
-          'my-defi-pet'
-        ].join("\n"),
+        currency: DefaultConfig.currency,
+        coins: DefaultConfig.coins.join("\n"),
       },
     }
   },

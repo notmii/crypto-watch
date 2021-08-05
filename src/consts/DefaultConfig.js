@@ -9,5 +9,5 @@ export default {
     'ethereum',
     'ripple',
     'my-defi-pet'
-  ].join("\n"),
+  ],
 }
