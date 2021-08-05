@@ -1,56 +1,40 @@
 <template>
 	<div class="container">
-		<!-- <fab
-			:position="'bottom-right'"
-			:bg-color="bgColor"
-			:actions="[{ name: 'openConfigModal' }]"
-			@openConfigModal="openConfigModal"
-		></fab> -->
-		<div class="row mt-4" v-for="(chunk, index) in coins" :key="index">
-			<div class="col" v-for="coin in chunk" :key="coin">
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<div class="col mt-4" v-for="coin in coins" :key="coin">
 				<coin-gecko-widget
 					:coinId="coin"
 					:currency="currency">
 				</coin-gecko-widget>
 			</div>
 		</div>
+		<Settings/>
 	</div>
 </template>
 
 <script>
-import chunk from 'lodash.chunk';
-// import fab from 'vue-fab';
 import CoinGeckoWidget from './CoinGeckoWidget';
+import Settings from './Settings.vue';
+import DefaultConfig from '../consts/DefaultConfig';
 export default {
 	name: 'Dashboard',
 	components: {
 		CoinGeckoWidget,
-		// fab
+		Settings
 	},
 	data() {
 		return {
-			currency: 'php',
-			coins: []
+			currency: DefaultConfig.currency,
+			coins: DefaultConfig.coins,
 		}
 	},
 	mounted() {
-		const watch = [
-			'binancecoin',
-			'cryptoblades',
-			'bitcoin',
-			'smooth-love-potion',
-			'axie-infinity',
-			'ethereum',
-			'ripple',
-			'my-defi-pet'
-		]
-		this.coins = chunk(watch, 2);
-	},
-	methods: {
-		openConfigModal() {
-			console.log("Open Config Modal");
+		if (localStorage.config) {
+			const config = JSON.parse(localStorage.config);
+			this.coins = config.coins.split('\n');
+			this.currency = config.currency;
 		}
-	}
+	},
 }
 </script>
 

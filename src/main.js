@@ -1,10 +1,9 @@
- /*jshint esversion: 6 */
+ /* jshint esversion: 6 */
 
 import {  createApp } from 'vue';
-// import App from './App.vue';
-import Dashboard from './components/Dashboard';
+import App from './App.vue';
 // import router from './router'
 
-createApp(Dashboard)
+createApp(App)
 	// .use(router)
 	.mount('#app')
