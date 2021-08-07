@@ -1,14 +1,13 @@
 <template>
+  <navbar/>
   <router-view/>
-  <Dashboard/>
 </template>
 
 <script>
-import Dashboard from './components/Dashboard';
-
+import Navbar from '@components/Navbar';
 export default {
   components: {
-    Dashboard
+    Navbar,
   }
 }
 </script>
