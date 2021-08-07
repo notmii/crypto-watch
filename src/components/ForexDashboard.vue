@@ -1,12 +1,11 @@
 <template>
 	<div class="container-fluid">
-		Crypto
+		Forex
 		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-			<div class="col mt-4" v-for="coin in coins" :key="coin">
-				<coin-gecko-widget
-					:coinId="coin"
-					:currency="currency">
-				</coin-gecko-widget>
+			<div class="col mt-4" v-for="symbol in symbols" :key="symbol">
+				<trading-view-widget
+					:symbol="symbol">
+				</trading-view-widget>
 			</div>
 		</div>
 		<Settings/>
@@ -14,26 +13,24 @@
 </template>
 
 <script>
-import CoinGeckoWidget from '@components/CoinGeckoWidget';
+import TradingViewWidget from '@components/TradingViewWidget';
 import Settings from '@components/Settings.vue';
 import DefaultConfig from '@consts/DefaultConfig';
 export default {
-	name: 'CryptoDashboard',
+	name: 'ForexDashboard',
 	components: {
-		CoinGeckoWidget,
-		Settings
+		TradingViewWidget,
+		Settings,
 	},
 	data() {
 		return {
-			currency: DefaultConfig.currency,
-			coins: DefaultConfig.coins,
+			symbols: DefaultConfig.forex,
 		}
 	},
 	mounted() {
 		if (localStorage.config) {
 			const config = JSON.parse(localStorage.config);
-			this.coins = config.coins.split('\n');
-			this.currency = config.currency;
+			this.symbols = config.forex ? config.forex.split('\n') : this.symbols;
 		}
 	},
 }

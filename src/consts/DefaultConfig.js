@@ -10,4 +10,12 @@ export default {
     'ripple',
     'my-defi-pet'
   ],
+  forex: [
+    'gbpusd',
+    'eurusd',
+    'audusd',
+    'usdjpy',
+    'usdchf',
+    'usdcad',
+  ]
 }
