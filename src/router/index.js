@@ -5,8 +5,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    name: 'Dashboard',
-    component: () => import( /* webpackChunkName: "Dashboard" */ '../components/Dashboard.vue')
+    name: 'CryptoDashboard',
+    component: () => import( /* webpackChunkName: "Dashboard" */ '../components/CryptoDashboard.vue')
+  },
+  {
+    path: '/fx',
+    name: 'FxDashboard',
+    component: () => import( /* webpackChunkName: "FxDashboard" */ '../components/ForexDashboard.vue')
   },
 ]
 
