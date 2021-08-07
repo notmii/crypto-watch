@@ -60,7 +60,7 @@
 
 <script>
 import { Modal } from 'bootstrap';
-import DefaultConfig from '../consts/DefaultConfig';
+import DefaultConfig from '@consts/DefaultConfig';
 export default {
   data() {
     return {
