@@ -22,7 +22,7 @@ export default {
     new window.TradingView.widget(
       {
         "autosize": true,
-        "symbol": `FX:${this.symbol}`,
+        "symbol": `FX_IDC:${this.symbol}`,
         "interval": "240",
         "timezone": "Asia/Hong_Kong",
         "theme": "dark",

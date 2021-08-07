@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  publicPath: "./",
+  publicPath: "/crypto-watch/",
   configureWebpack: {
     resolve: {
       alias: {
