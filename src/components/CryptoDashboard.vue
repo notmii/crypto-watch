@@ -1,6 +1,5 @@
 <template>
 	<div class="container-fluid">
-		Crypto
 		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 			<div class="col mt-4" v-for="coin in coins" :key="coin">
 				<coin-gecko-widget

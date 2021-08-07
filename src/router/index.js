@@ -9,7 +9,7 @@ const routes = [
     component: () => import( /* webpackChunkName: "Dashboard" */ '../components/CryptoDashboard.vue')
   },
   {
-    path: '/fx',
+    path: '/forex',
     name: 'FxDashboard',
     component: () => import( /* webpackChunkName: "FxDashboard" */ '../components/ForexDashboard.vue')
   },

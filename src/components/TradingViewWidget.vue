@@ -26,11 +26,11 @@ export default {
         "interval": "240",
         "timezone": "Asia/Hong_Kong",
         "theme": "dark",
-        "style": "1",
+        "style": "3",
         "locale": "en",
         "toolbar_bg": "#f1f3f6",
         "enable_publishing": false,
-        "hide_top_toolbar": true,
+        "hide_top_toolbar": false,
         "save_image": false,
         "container_id": this.symbol,
       }
@@ -41,6 +41,6 @@ export default {
 
 <style scoped>
   .tradingview {
-    height: 300px;
+    height: 400px;
   }
 </style>

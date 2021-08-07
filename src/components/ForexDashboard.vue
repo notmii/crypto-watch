@@ -1,6 +1,5 @@
 <template>
 	<div class="container-fluid">
-		Forex
 		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 			<div class="col mt-4" v-for="symbol in symbols" :key="symbol">
 				<trading-view-widget
