@@ -1,6 +1,6 @@
  /*jshint esversion: 6 */
  
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
@@ -8,20 +8,19 @@ const routes = [
     redirect: { name: 'CryptoDashboard' },
   },
   {
-    path: '/#/',
+    path: '/crypto',
     name: 'CryptoDashboard',
     component: () => import( /* webpackChunkName: "Dashboard" */ '../components/CryptoDashboard.vue'),
   },
   {
-    path: '/#/forex',
+    path: '/forex',
     name: 'ForexDashboard',
     component: () => import( /* webpackChunkName: "FxDashboard" */ '../components/ForexDashboard.vue'),
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  base: '/crypto-watch/',
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
 
