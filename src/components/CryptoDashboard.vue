@@ -1,15 +1,19 @@
 <template>
-	<div class="container-fluid">
-		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-			<div class="col mt-4" v-for="coin in coins" :key="coin">
-				<coin-gecko-widget
-					:coinId="coin"
-					:currency="currency">
-				</coin-gecko-widget>
-			</div>
-		</div>
-		<Settings/>
-	</div>
+  <div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      <div
+        v-for="coin in coins"
+        :key="coin"
+        class="col mt-4"
+      >
+        <coin-gecko-widget
+          :coin-id="coin"
+          :currency="currency"
+        />
+      </div>
+    </div>
+    <Settings />
+  </div>
 </template>
 
 <script>

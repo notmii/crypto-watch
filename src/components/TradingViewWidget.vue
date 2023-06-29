@@ -1,6 +1,9 @@
 <template>
   <div class="tradingview-widget-container">
-    <div :id="symbol" class="tradingview"></div>
+    <div
+      :id="symbol"
+      class="tradingview"
+    />
   </div>
 </template>
 
@@ -8,6 +11,10 @@
   
 export default {
   props: {
+    type: {
+      type: String,
+      required: true,
+    },
     symbol: {
       type: String,
       required: true,
@@ -18,11 +25,26 @@ export default {
       container_id: 'tradingview',
     }
   },
+  computed: {
+    symbolPrefix() {
+      let symbol = '';
+      switch (this.type) {
+        case 'forex':
+          symbol = 'FX_IDC';
+          break;
+
+        case 'pse':
+          symbol = 'PSE';
+          break;
+      }
+      return symbol;
+    }
+  },
   mounted() {
     new window.TradingView.widget(
       {
         "autosize": true,
-        "symbol": `FX_IDC:${this.symbol}`,
+        "symbol": `${this.symbolPrefix}:${this.symbol}`,
         "interval": "240",
         "timezone": "Asia/Hong_Kong",
         "theme": "dark",

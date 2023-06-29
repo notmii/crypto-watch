@@ -17,6 +17,11 @@ const routes = [
     name: 'ForexDashboard',
     component: () => import( /* webpackChunkName: "FxDashboard" */ '../components/ForexDashboard.vue'),
   },
+  {
+    path: '/pse',
+    name: 'PseStockDashboard',
+    component: () => import( /* webpackChunkName: "PseStockDashboard" */ '../components/PseStockDashboard.vue'),
+  },
 ]
 
 const router = createRouter({

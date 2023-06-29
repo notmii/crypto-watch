@@ -3,8 +3,8 @@
     :currency="currency"
     :coin-id="coinId"
     locale="en"
-    height="300">
-  </coingecko-coin-price-chart-widget>
+    height="300"
+  />
 </template>
 
 <script>
